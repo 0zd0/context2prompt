@@ -27,9 +27,11 @@
         <action id="context2prompt.CopyTree" class="com.ozd0.context2prompt.action.CopyTreeAction">
             <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
         </action>
-
         <action id="context2prompt.CopyOpenFiles" class="com.ozd0.context2prompt.action.CopyOpenFilesAction">
             <add-to-group group-id="EditorTabPopupMenu" anchor="last"/>
+        </action>
+        <action id="context2prompt.CopyContext" class="com.ozd0.context2prompt.action.CopyContextAction">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
         </action>
     </actions>
 
