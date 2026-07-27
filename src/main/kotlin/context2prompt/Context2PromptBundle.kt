@@ -1,14 +1,14 @@
-package com.ozd0
+package com.ozd0.context2prompt
 
 import com.intellij.DynamicBundle
 import org.jetbrains.annotations.Nls
 import org.jetbrains.annotations.PropertyKey
 import java.util.function.Supplier
 
-private const val BUNDLE = "messages.MyMessageBundle"
+private const val BUNDLE = "messages.Context2PromptBundle"
 
-internal object MyMessageBundle {
-    private val instance = DynamicBundle(MyMessageBundle::class.java, BUNDLE)
+internal object Context2PromptBundle {
+    private val instance = DynamicBundle(Context2PromptBundle::class.java, BUNDLE)
 
     @JvmStatic
     fun message(key: @PropertyKey(resourceBundle = BUNDLE) String, vararg params: Any?): @Nls String {
