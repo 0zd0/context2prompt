@@ -32,8 +32,17 @@ class IgnoreMatcher(
     }
 
     fun isIgnored(relativePath: String, isDirectory: Boolean): Boolean {
-        match(c2pLayers, relativePath, isDirectory)?.let { return it }
-        match(gitLayers, relativePath, isDirectory)?.let { return it }
+        var slash = relativePath.indexOf('/')
+        while (slash > 0) {
+            if (isIgnoredExact(relativePath.substring(0, slash), true)) return true
+            slash = relativePath.indexOf('/', slash + 1)
+        }
+        return isIgnoredExact(relativePath, isDirectory)
+    }
+
+    private fun isIgnoredExact(path: String, isDirectory: Boolean): Boolean {
+        match(c2pLayers, path, isDirectory)?.let { return it }
+        match(gitLayers, path, isDirectory)?.let { return it }
         return false
     }
 

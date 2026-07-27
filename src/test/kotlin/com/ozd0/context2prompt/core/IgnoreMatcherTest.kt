@@ -135,4 +135,32 @@ class IgnoreMatcherTest {
         assertTrue(m.isIgnored("sub/build", true))
         assertFalse(m.isIgnored("sub/nested/build", true))
     }
+
+    @Test
+    fun `file inside ignored dir is ignored`() {
+        val m = IgnoreMatcher("certs/", null)
+        assertTrue(m.isIgnored("certs/root_ca.pem", false))
+        assertTrue(m.isIgnored("certs/deep/file.pem", false))
+        assertFalse(m.isIgnored("other/root_ca.pem", false))
+    }
+
+    @Test
+    fun `nested gitignore dir pattern ignores deep file on direct check`() {
+        val m = IgnoreMatcher(null, null)
+        m.pushNestedGitignore("python", "certs/")
+        assertTrue(m.isIgnored("python/certs/root_ca.pem", false))
+        assertFalse(m.isIgnored("python/other.txt", false))
+    }
+
+    @Test
+    fun `negation cannot re-include file inside ignored dir`() {
+        val m = IgnoreMatcher("build/\n!build/keep.txt", null)
+        assertTrue(m.isIgnored("build/keep.txt", false))
+    }
+
+    @Test
+    fun `negation on dir itself re-includes subtree`() {
+        val m = IgnoreMatcher("generated/", "!generated/")
+        assertFalse(m.isIgnored("generated/file.txt", false))
+    }
 }
