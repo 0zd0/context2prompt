@@ -17,6 +17,12 @@ Select files or folders in the Project view, open files, or a file with errors -
 - Notification with file count and approximate token estimate
 <!-- Plugin description end -->
 
+## Screenshots
+
+![Project view menu](.github/screenshots/project-view-menu.png)
+![Problems menu](.github/screenshots/editor-problems-menu.png)
+![Open files menu](.github/screenshots/open-files-menu.png)
+
 ## Development
 
 ### Run sandbox
