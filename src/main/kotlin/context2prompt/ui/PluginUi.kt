@@ -22,6 +22,14 @@ object PluginUi {
             "notification.structure.copied", dirCount, fileCount, approxTokens, skippedCount
         ))
 
+    fun notifyProblemsCopied(project: Project, problemCount: Int, approxTokens: Int) =
+        notify(project, Context2PromptBundle.message(
+            "notification.problems.copied", problemCount, formatTokens(approxTokens)
+        ))
+
+    fun notifyNoProblems(project: Project) =
+        notify(project, Context2PromptBundle.message("notification.problems.none"))
+
     private fun notify(project: Project, message: String) {
         NotificationGroupManager.getInstance()
             .getNotificationGroup(PluginConstants.NOTIFICATION_GROUP)
