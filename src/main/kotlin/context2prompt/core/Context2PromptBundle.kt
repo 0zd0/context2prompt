@@ -1,4 +1,4 @@
-package com.ozd0.context2prompt
+package com.ozd0.context2prompt.core
 
 import com.intellij.DynamicBundle
 import org.jetbrains.annotations.Nls

@@ -1,6 +1,6 @@
 package com.ozd0.context2prompt.ui
 
-import com.ozd0.context2prompt.Context2PromptBundle
+import com.ozd0.context2prompt.core.Context2PromptBundle
 import com.ozd0.context2prompt.PluginConstants
 import com.ozd0.context2prompt.core.SelectedItem
 import com.intellij.notification.NotificationGroupManager

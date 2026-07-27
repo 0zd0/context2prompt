@@ -5,7 +5,7 @@ import com.intellij.openapi.ide.CopyPasteManager
 import com.intellij.openapi.progress.ProgressManager
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.vfs.VirtualFile
-import com.ozd0.context2prompt.Context2PromptBundle
+import com.ozd0.context2prompt.core.Context2PromptBundle
 import com.ozd0.context2prompt.core.FileCollector
 import com.ozd0.context2prompt.core.FileContentReader
 import com.ozd0.context2prompt.core.TokenEstimator

@@ -24,26 +24,30 @@
     <resource-bundle>messages.Context2PromptBundle</resource-bundle>
 
     <actions>
-        <action id="context2prompt.CopyContext" class="com.ozd0.context2prompt.action.CopyContextAction"/>
-        <action id="context2prompt.CopyTree" class="com.ozd0.context2prompt.action.CopyTreeAction"/>
-        <action id="context2prompt.CopyOpenFiles" class="com.ozd0.context2prompt.action.CopyOpenFilesAction">
+        <action id="context2prompt.CopyContext" class="com.ozd0.context2prompt.action.CopyContextAction" icon="com.ozd0.context2prompt.PluginIcons.LOGO"/>
+        <action id="context2prompt.CopyTree" class="com.ozd0.context2prompt.action.CopyTreeAction" icon="AllIcons.Actions.ShowAsTree"/>
+        <action id="context2prompt.CopyOpenFiles" class="com.ozd0.context2prompt.action.CopyOpenFilesAction" icon="com.ozd0.context2prompt.PluginIcons.LOGO">
             <add-to-group group-id="EditorTabPopupMenu" anchor="last"/>
         </action>
-        <action id="context2prompt.CopyProblems" class="com.ozd0.context2prompt.action.CopyProblemsAction"/>
-        <action id="context2prompt.CopyProblemsWithFile" class="com.ozd0.context2prompt.action.CopyProblemsWithFileAction"/>
-        <action id="context2prompt.CopyProblemAtLine" class="com.ozd0.context2prompt.action.CopyProblemAtLineAction"/>
-        <action id="context2prompt.CopyProblemAtLineWithFile" class="com.ozd0.context2prompt.action.CopyProblemAtLineWithFileAction"/>
+        <action id="context2prompt.CopyProblems" class="com.ozd0.context2prompt.action.CopyProblemsAction" icon="com.ozd0.context2prompt.PluginIcons.PROBLEMS_ALL"/>
+        <action id="context2prompt.CopyProblemsWithFile" class="com.ozd0.context2prompt.action.CopyProblemsWithFileAction" icon="com.ozd0.context2prompt.PluginIcons.PROBLEMS_ALL_FILE"/>
+        <action id="context2prompt.CopyProblemAtLine" class="com.ozd0.context2prompt.action.CopyProblemAtLineAction" icon="com.ozd0.context2prompt.PluginIcons.PROBLEMS_LINE"/>
+        <action id="context2prompt.CopyProblemAtLineWithFile" class="com.ozd0.context2prompt.action.CopyProblemAtLineWithFileAction" icon="com.ozd0.context2prompt.PluginIcons.PROBLEMS_LINE_FILE"/>
 
-        <group id="context2prompt.ProjectViewGroup" popup="true">
+        <group id="context2prompt.ProjectViewGroup">
             <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+            <separator/>
             <reference ref="context2prompt.CopyContext"/>
             <reference ref="context2prompt.CopyTree"/>
+            <separator/>
         </group>
 
-        <group id="context2prompt.EditorGroup" popup="true">
+        <group id="context2prompt.EditorGroup" popup="true" icon="com.ozd0.context2prompt.PluginIcons.LOGO">
             <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+            <separator key="separator.problems.line"/>
             <reference ref="context2prompt.CopyProblemAtLine"/>
             <reference ref="context2prompt.CopyProblemAtLineWithFile"/>
+            <separator key="separator.problems.file"/>
             <reference ref="context2prompt.CopyProblems"/>
             <reference ref="context2prompt.CopyProblemsWithFile"/>
         </group>
