@@ -10,13 +10,6 @@
     <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
     <vendor url="https://github.com/0zd0">0zd0</vendor>
 
-    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
-         Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-description -->
-    <description><![CDATA[
-        Enter short description for your plugin here.<br>
-        <em>most HTML tags may be used</em>
-        ]]></description>
-
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
@@ -34,11 +27,14 @@
         <action id="context2prompt.CopyProblemAtLine" class="com.ozd0.context2prompt.action.CopyProblemAtLineAction" icon="com.ozd0.context2prompt.PluginIcons.PROBLEMS_LINE"/>
         <action id="context2prompt.CopyProblemAtLineWithFile" class="com.ozd0.context2prompt.action.CopyProblemAtLineWithFileAction" icon="com.ozd0.context2prompt.PluginIcons.PROBLEMS_LINE_FILE"/>
 
+        <action id="context2prompt.CreateC2pIgnore" class="com.ozd0.context2prompt.action.CreateC2pIgnoreAction" icon="AllIcons.Actions.AddFile" />
+
         <group id="context2prompt.ProjectViewGroup">
             <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
             <separator/>
             <reference ref="context2prompt.CopyContext"/>
             <reference ref="context2prompt.CopyTree"/>
+            <reference ref="context2prompt.CreateC2pIgnore"/>
             <separator/>
         </group>
 
