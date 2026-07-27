@@ -20,7 +20,7 @@
         <action id="context2prompt.CopyContext" class="com.ozd0.context2prompt.action.CopyContextAction" icon="com.ozd0.context2prompt.PluginIcons.LOGO"/>
         <action id="context2prompt.CopyTree" class="com.ozd0.context2prompt.action.CopyTreeAction" icon="AllIcons.Actions.ShowAsTree"/>
         <action id="context2prompt.CopyOpenFiles" class="com.ozd0.context2prompt.action.CopyOpenFilesAction" icon="com.ozd0.context2prompt.PluginIcons.LOGO">
-            <add-to-group group-id="EditorTabPopupMenu" anchor="last"/>
+            <add-to-group group-id="EditorTabPopupMenu" anchor="after" relative-to-action="CopyReferencePopupGroup"/>
         </action>
         <action id="context2prompt.CopyProblems" class="com.ozd0.context2prompt.action.CopyProblemsAction" icon="com.ozd0.context2prompt.PluginIcons.PROBLEMS_ALL"/>
         <action id="context2prompt.CopyProblemsWithFile" class="com.ozd0.context2prompt.action.CopyProblemsWithFileAction" icon="com.ozd0.context2prompt.PluginIcons.PROBLEMS_ALL_FILE"/>
@@ -30,7 +30,7 @@
         <action id="context2prompt.CreateC2pIgnore" class="com.ozd0.context2prompt.action.CreateC2pIgnoreAction" icon="AllIcons.Actions.AddFile" />
 
         <group id="context2prompt.ProjectViewGroup">
-            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="after" relative-to-action="CutCopyPasteGroup"/>
             <separator/>
             <reference ref="context2prompt.CopyContext"/>
             <reference ref="context2prompt.CopyTree"/>
@@ -39,7 +39,7 @@
         </group>
 
         <group id="context2prompt.EditorGroup" popup="true" icon="com.ozd0.context2prompt.PluginIcons.LOGO">
-            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="EditorToggleColumnMode"/>
             <separator key="separator.problems.line"/>
             <reference ref="context2prompt.CopyProblemAtLine"/>
             <reference ref="context2prompt.CopyProblemAtLineWithFile"/>
