@@ -10,7 +10,7 @@ plugins {
 
 dependencies {
     testImplementation(libs.junit)
-    implementation("org.eclipse.jgit:org.eclipse.jgit:7.7.1.202607240634-r") {
+    implementation("org.eclipse.jgit:org.eclipse.jgit:7.8.0.202609011348-r") {
         exclude(group = "org.slf4j")
     }
 
