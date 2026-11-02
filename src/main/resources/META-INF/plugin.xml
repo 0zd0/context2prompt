@@ -30,7 +30,12 @@
         <action id="context2prompt.CreateC2pIgnore" class="com.ozd0.context2prompt.action.CreateC2pIgnoreAction" icon="AllIcons.Actions.AddFile" />
 
         <group id="context2prompt.ProjectViewGroup">
-            <add-to-group group-id="ProjectViewPopupMenu" anchor="after" relative-to-action="CutCopyPasteGroup"/>
+            <add-to-group group-id="ProjectViewPopupMenu"
+                          anchor="after"
+                          relative-to-action="CutCopyPasteGroup"/>
+            <add-to-group group-id="RevealGroup"
+                          anchor="last"/>
+
             <separator/>
             <reference ref="context2prompt.CopyContext"/>
             <reference ref="context2prompt.CopyTree"/>

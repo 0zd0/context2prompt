@@ -1,6 +1,7 @@
 import org.jetbrains.changelog.markdownToHTML
 import org.jetbrains.intellij.platform.gradle.TestFrameworkType
 import org.jetbrains.intellij.platform.gradle.tasks.VerifyPluginTask
+import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType
 
 plugins {
     id("org.jetbrains.kotlin.jvm")
@@ -63,4 +64,20 @@ intellijPlatform {
 changelog {
     groups.empty()
     repositoryUrl = "https://github.com/0zd0/context2prompt"
+}
+
+intellijPlatformTesting {
+    runIde.register("runRustRover") {
+        localPath = file(providers.gradleProperty("rustRoverPath").get())
+
+        task {
+            providers.gradleProperty("rustRoverVmOptions").orNull?.let { path ->
+                jvmArgs(
+                    file(path).readLines()
+                        .map { it.trim() }
+                        .filter { it.isNotEmpty() && !it.startsWith("#") }
+                )
+            }
+        }
+    }
 }

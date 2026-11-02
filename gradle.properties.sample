@@ -12,3 +12,6 @@ org.gradle.caching = true
 
 pluginSinceBuild=243
 platformVersion=2025.3.5
+
+rustRoverPath=/Applications/RustRover.app/Contents
+rustRoverVmOptions=/Users/yourname/path/to/rustrover.vmoptions
